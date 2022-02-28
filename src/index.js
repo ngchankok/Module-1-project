@@ -65,7 +65,7 @@ function startGame() {
     board = [['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
 
     if (gameCount % 2 == 0) {
-        document.querySelector('#display > p').innerHTML ="Bot's Turn";
+        document.querySelector('#display > p').innerHTML ="BOT's Turn";
         setTimeout(botMove, 500);
     } else {
         document.querySelector('#display > p').innerHTML ="Player's Turn";
@@ -126,7 +126,7 @@ function handleClick(event) {
 
     placeMarker(cell, currentClass);
     winner = checkWin(currentClass);
-    document.querySelector('#display > p').innerHTML ="Bot's Turn";
+    document.querySelector('#display > p').innerHTML ="BOT's Turn";
 
     if (winner) {
         endGame(false);
@@ -335,14 +335,14 @@ function endGame(draw) {
         gameOverMsg.innerText = 'Game Tie!';
     } else {
         if (gameCount % 2 != 0) {
-            gameOverMsg.innerText = `${playerTurn ? 'Player' : 'Bot'} Wins!`;
+            gameOverMsg.innerText = `${playerTurn ? 'Player' : 'BOT'} Wins!`;
             if (playerTurn) {
                 gameWon += 1;
             } else {
                 gameLost += 1;
             }
         } else {
-            gameOverMsg.innerText = `${playerTurn ? 'Bot' : 'Player'} Wins!`;
+            gameOverMsg.innerText = `${playerTurn ? 'BOT' : 'Player'} Wins!`;
             if (!playerTurn) {
                 gameWon += 1;
             } else {
